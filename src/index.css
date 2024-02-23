@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cabin", sans-serif;
+  }
+  body{
+    font-family: "acumin-pro", sans-serif;
+font-weight: bold;
+font-style: normal;
+  }
+/* Width and height for the scrollbar */
+::-webkit-scrollbar {
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 5px;
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #630BFF;
+  border-radius: 5px;
+}
+
+/* Handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgba(99,11,255,1) 0%, rgba(142,2,251,1) 100%);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5D64FF;
+}

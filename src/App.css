@@ -1,0 +1,9 @@
+
+.todocard{
+    transition: all 0.4s !important;
+}
+.todocard:hover{
+    padding: 10px 0;
+}
+
+
