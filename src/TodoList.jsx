@@ -12,7 +12,7 @@ import { v4 as id } from 'uuid';
 import { useState } from 'react';
 import { TodosContext } from './contexts/todoContext';
 import { useContext } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 export default function TodoList() {
   const {todos,setTodos} = useContext(TodosContext)
@@ -20,14 +20,18 @@ export default function TodoList() {
   const [displayedTodosType, setdisplayedTodosType] = useState('all')
 
 
-  const completedTodos = todos.filter((t) =>{
-    return t.isCompleted
-  })
-  const notCompletedTodos = todos.filter((t) =>{
-    return !t.isCompleted
-  })
+  const completedTodos = useMemo(() => {
+    return todos.filter((t) =>{
+      return t.isCompleted
+    })
+  },[todos]) 
+  
+  const notCompletedTodos = useMemo(()=>{
+    return todos.filter((t) =>{
+      return !t.isCompleted
+    })
+  },[todos])
   let todosToRender = todos
-
   if(displayedTodosType == 'done'){
     todosToRender = completedTodos
   }else if (displayedTodosType == 'in-progress' ) {
